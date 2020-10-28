@@ -1,9 +1,11 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect, reverse
 
 # Create your views here.
-def add(request, honk):
-    print("Cart says Hello")
-    print(honk)
-    request.session[honk] = "1234"
-    return render(request, "cart/thanks.html")
+def add(request, id):
+    quantity = 0
+
+    cart = request.session.get('cart', {})
+    cart[id] = cart.get(id, quantity)
+
+    request.session['cart'] = cart
+    return redirect(reverse('index'))
