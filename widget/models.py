@@ -10,3 +10,4 @@ class Widget(models.Model):
     detailPicBig = models.CharField(max_length=100)
     detailPicSmall = models.CharField(max_length=100)
     quantity = models.IntegerField()
+    price = models.IntegerField()
