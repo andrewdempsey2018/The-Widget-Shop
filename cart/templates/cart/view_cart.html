@@ -9,9 +9,9 @@
 
 <body>
     <h1>View cart</h1>
-    {% for key, item in cart.items %}
-    <h3>{{ item.name }}</h3>
-    <h3>{{ key.name }}</h3>
+    {% for key, value in cart.items %}
+    <h3>{{key}}</h3>
+    <h3>{{value}}</h3>
     {% endfor %}
 
     <a href="{% url 'index' %}">back to index</a>
