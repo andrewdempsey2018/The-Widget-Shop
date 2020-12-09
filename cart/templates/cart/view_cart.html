@@ -9,9 +9,19 @@
 
 <body>
     <h1>View cart</h1>
+
     {% for key, value in cart.items %}
-    <h3>{{key}}</h3>
-    <h3>{{value}}</h3>
+      {% for k, v in value.items %}
+        {% if k == "product_name" %}
+          <p>{{v}}</p>
+        {% endif %}
+        {% if k == "quantity" %}
+        <h2>{{v}}</h2>
+        {% endif %}
+        {% if k == "image" %}
+        <img class="img-fluid" src="{{v}}" alt="">
+        {% endif %}
+      {% endfor %}
     {% endfor %}
 
     <a href="{% url 'index' %}">back to index</a>

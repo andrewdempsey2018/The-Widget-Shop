@@ -16,6 +16,6 @@ def view_cart(request):
 def add_to_cart(request, id):
     cart = request.session.get('cart', {})
     product = get_object_or_404(Widget, pk=id)
-    cart[id] = {'key1': product.name, 'key2': 'val2', 'key3': 'val3'}
+    cart[id] = {'product_name': product.name, 'quantity': request.POST['quantity'], 'image': product.detailPicSmall}
     request.session['cart'] = cart
     return redirect('index')
