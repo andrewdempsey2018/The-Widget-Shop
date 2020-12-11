@@ -23,16 +23,13 @@
             <h3 class="my-3">Project Details</h3>
             <p>{{widget.features}}</p>
             <p>Only €{{ widget.price }}</p>
-        </div>
 
-        <div>
             <form action="{% url 'add_to_cart' id=widget.id %}" method="POST">
                 {% csrf_token %}
                 <p>Quantity:<input type="number" id="quantity" name="quantity" value=1 min="1" max="55"></p>
-                <input type="submit" value="OK">
+                <input type="submit" value="Add to basket">
             </form>
         </div>
-
     </div>
     <!-- /.row -->
 
