@@ -18,12 +18,17 @@
   {% if k == "quantity" %}
   <h3>Quantity ordered: {{v}}</h3>
   {% endif %}
+  {% if k == "price" %}
+  <h3>Unit price: {{v}}</h3>
+  {% endif %}
   {% if k == "image" %}
   <img class="img-fluid" src="{{v}}" alt="">
   {% endif %}
   {% endfor %}
   <hr>
   {% endfor %}
+
+   <h1>Total Charge: €{{total}}</h1>
 
   <a href="{% url 'index' %}">back to index</a>
 
