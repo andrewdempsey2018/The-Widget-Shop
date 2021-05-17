@@ -8,4 +8,5 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('', include("widget.urls")),
     path('', include("cart.urls")),
+    path('', include("checkout.urls")),
 ]
